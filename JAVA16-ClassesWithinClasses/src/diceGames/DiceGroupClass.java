@@ -13,22 +13,23 @@ package diceGames;
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class diceGroupClass {
+public class DiceGroupClass {
 	
 	// Attributes
-	private ArrayList<diceClass> diceList;
+	private List<DiceClass> diceList;
 
 	// Constructors
-	public diceGroupClass ()
+	public DiceGroupClass ()
 	{
 		this(2);
 	}
 	
-	public diceGroupClass (int num)
+	public DiceGroupClass (int num)
 	{
 		System.out.println("GROUP CONSTRUCTOR Called with " + num + " dice");
-		diceList = new ArrayList<diceClass>();
+		diceList = new ArrayList<DiceClass>();
 		setNumDice(num);
 		System.out.println("GROUP CONSTRUCTOR Number dice set to " + diceList.size() );
 	}
@@ -40,7 +41,7 @@ public class diceGroupClass {
 		// Add any dice needed
 		while ( diceList.size() < size )
 		{
-			diceClass newDice = new diceClass();
+			DiceClass newDice = new DiceClass();
 			diceList.add(0, newDice);
 		}
 		
@@ -54,7 +55,7 @@ public class diceGroupClass {
 	public void rollAllDice ()
 	{
 		System.out.println("ROLL DICE - I have " + diceList.size() + " dice");	
-		for(diceClass thisDice:diceList)
+		for(DiceClass thisDice:diceList)
 		{
 			thisDice.rollDice();
 		}
@@ -66,7 +67,7 @@ public class diceGroupClass {
 		
 		rollAllDice();
 		
-		for(diceClass thisDice:diceList)
+		for(DiceClass thisDice:diceList)
 		{
 			total += thisDice.getDiceValue();
 		}
@@ -81,9 +82,14 @@ public class diceGroupClass {
 		
 		rollAllDice();
 		
-		for(diceClass thisDice:diceList)
+		for(DiceClass thisDice:diceList)
 		{
-			total += thisDice.diceOnOrOver(threshold);
+			// If dice roll on or over returns true
+			// Increment total by 1
+			if (thisDice.diceOnOrOver(threshold))
+			{
+				total++;
+			}
 		}
 		System.out.println("Threhold " + total 
 				+ " out of " + diceList.size()

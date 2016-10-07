@@ -18,14 +18,14 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class testClass {
+public class TestClass {
 	
 	@Test
 	public void testCraps()
 	{
 		System.out.println("ROLL TWO DICE");
 		System.out.println("=============");
-		diceGroupClass cupOfDice = new diceGroupClass();
+		DiceGroupClass cupOfDice = new DiceGroupClass();
 		
 		cupOfDice.sumAllDice();		
 	}
@@ -41,7 +41,7 @@ public class testClass {
 		System.out.println("WARHAMMER 40K SPACE MARINE");
 		System.out.println("==========================");
 		
-		diceGroupClass cupOfDice = new diceGroupClass(10);
+		DiceGroupClass cupOfDice = new DiceGroupClass(10);
 		int numHit = cupOfDice.getDiceOverThreshold(3);
 		System.out.println("Caused " + numHit + " hits");
 		

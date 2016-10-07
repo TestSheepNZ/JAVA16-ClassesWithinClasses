@@ -12,13 +12,13 @@ package diceGames;
  * Mike Talks, Sept 2016
  */
 
-public class haloFleetBattlesDiceClass extends diceClass {
+public class HaloFleetBattlesDiceClass extends DiceClass {
 
 	// Attributes
 	private String diceResult;
 	
 	// Constructor
-	public haloFleetBattlesDiceClass ()
+	public HaloFleetBattlesDiceClass ()
 	{
 		//Super calls the base class constructor
 		super(6);
